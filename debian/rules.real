@@ -398,6 +398,7 @@ binary_image_dt:
 ifneq ($(filter arm64 armel armhf mipsr6 mipsr6el mips64r6 mips64r6el riscv64,$(ARCH)),)
 	+$(MAKE_CLEAN) -C $(DIR) dtbs
 	+$(MAKE_CLEAN) -C $(DIR) dtbs_install INSTALL_DTBS_PATH=$(DT_INSTALL_DIR)
+	install $(BUILD_DIR)/source_$(FEATURESET)/arch/arm/boot/dts/overlays/README $(DT_INSTALL_DIR)/overlays/
 	# dtbs_install sets the executable bit on dtb files, which they shouldn't have
 	find $(DT_INSTALL_DIR) -type f -name '*.dtb' -exec chmod 644 {} \;
 endif
@@ -552,9 +553,11 @@ endif
 	dh_fixperms
 	dh_installdeb
 	dh_shlibdeps
+	DEB_NOEPOCH_VERSION="$$(echo $(DEB_VERSION) | cut -d: -f2-)" && \
+	DEB_EPOCH="$$(echo $(DEB_VERSION) | sed "s/$$DEB_NOEPOCH_VERSION//")" && \
 	VERSION="$$(($$(sed -ne 's,^#define LIBBPF_MAJOR_VERSION \(.*\)$$,\1,p' tools/lib/bpf/libbpf_version.h) + 6)).$$(sed -ne 's,^#define LIBBPF_MINOR_VERSION \(.*\)$$,\1,p' tools/lib/bpf/libbpf_version.h).$$(sed -ne 's,^#define BPFTOOL_PATCH_VERSION \(.*\)$$,\1,p' tools/bpf/bpftool/main.c)" && \
 	test -n "$$VERSION" -a -n "$(DEB_VERSION)" && \
-	dh_gencontrol -- -v$$VERSION+$(DEB_VERSION)
+	dh_gencontrol -- -v$$DEB_EPOCH$$VERSION+$$DEB_NOEPOCH_VERSION
 	dh_md5sums
 	dh_builddeb -- $(BUILDDEB_ARGS)
 
@@ -673,9 +676,11 @@ endif
 	dh_fixperms
 	dh_installdeb
 	dh_shlibdeps
+	DEB_NOEPOCH_VERSION="$$(echo $(DEB_VERSION) | cut -d: -f2-)" && \
+	DEB_EPOCH="$$(echo $(DEB_VERSION) | sed "s/$$DEB_NOEPOCH_VERSION//")" && \
 	VERSION=$$(sed -ne 's,^#define PACKAGE_VERSION "\(.*\)"$$,\1,p' $(BUILD_DIR)/build-tools/tools/usb/usbip/config.h) && \
 	test -n "$$VERSION" -a -n "$(DEB_VERSION)" && \
-	dh_gencontrol -- -v$$VERSION+$(DEB_VERSION)
+	dh_gencontrol -- -v$$DEB_EPOCH$$VERSION+$$DEB_NOEPOCH_VERSION
 	dh_md5sums
 	dh_builddeb -- $(BUILDDEB_ARGS)
 

@@ -1,3 +1,59 @@
+linux (1:6.1.73-1+rpt1) bookworm; urgency=medium
+
+  * Bump ABI to rpi8
+  * Linux commit: ccf1586ad0663fa91238ac56abf6340d6d740d18
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 25 Jan 2024 19:52:44 +0000
+
+linux (1:6.1.63-1+rpt2) bookworm; urgency=medium
+
+  * d/c: move initramfs-tools to image recommends
+  * d/t/image.postinst.in: add option to skip initramfs generation altogether
+  * Linux commit: ccf1586ad0663fa91238ac56abf6340d6d740d18
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 04 Jan 2024 14:43:52 +0000
+
+linux (1:6.1.63-1+rpt1) bookworm; urgency=medium
+
+  * Linux commit: ccf1586ad0663fa91238ac56abf6340d6d740d18
+  * Bump ABI to rpi7
+
+ -- Serge Schneider <serge@raspberrypi.com>  Fri, 24 Nov 2023 16:11:00 +0000
+
+linux (1:6.1.58-1+rpt2) bookworm; urgency=medium
+
+  * Linux commit: ccf1586ad0663fa91238ac56abf6340d6d740d18
+  * Remove most Debian patches
+  * Bump ABI to rpi5
+
+ -- Serge Schneider <serge@raspberrypi.com>  Fri, 27 Oct 2023 14:31:48 +0000
+
+linux (1:6.1.58-1+rpt1) bookworm; urgency=medium
+
+  * Linux commit: 3ed6d34d53e94ecbebc64c8fa3d1b6d3c41db8fb
+
+ -- Serge Schneider <serge@raspberrypi.com>  Wed, 25 Oct 2023 13:04:06 +0000
+
+linux (1:6.1.54-1+rpt2) bookworm; urgency=medium
+
+  [ Serge Schneider ]
+  * Build from public linux repo
+  * Linux commit: 2906f7abdc03d4a92b6b0e2e0c87ea2a9dffe8f7
+
+ -- Serge Schneider <serge@raspberrypi.com>  Thu, 05 Oct 2023 12:33:08 +0100
+
+linux (1:6.1.54-1+rpt1) bookworm; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * drivers/ptp: Make PTP_1588_CLOCK builtin (except armel/marvell)
+    (Closes: #1036744)
+
+  [ Serge Schneider ]
+  * Raspberry Pi OS release
+  * Linux commit: d6e6b9afa8fa93b97c61f1617e1b1590583bc7a7
+
+ -- Serge Schneider <serge@raspberrypi.com>  Wed, 27 Sep 2023 21:42:31 +0100
+
 linux (6.1.38-4) bookworm-security; urgency=high
 
   * Fix "init, x86: Move mem_encrypt_init() into arch_cpu_finalize_init()"

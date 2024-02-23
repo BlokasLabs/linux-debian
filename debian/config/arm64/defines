@@ -2,12 +2,11 @@
 cross-compile-compat: arm-linux-gnueabihf-
 kernel-arch: arm64
 featuresets:
- none
- rt
+ rpi
 
 [build]
-image-file: arch/arm64/boot/Image
-signed-code: true
+image-file: arch/arm64/boot/Image.gz
+signed-code: false
 vdso: true
 
 [image]
@@ -25,3 +24,11 @@ hardware-long: cloud platforms supporting arm64 virtual machines
 [relations]
 gcc-12: gcc-12 <!stage1 !cross !pkg.linux.nokernel>, gcc-12-aarch64-linux-gnu <!stage1 cross !pkg.linux.nokernel>, gcc-arm-linux-gnueabihf <!stage1 !pkg.linux.nokernel>
 headers%gcc-12: gcc-12
+
+[v8_description]
+hardware: Raspberry Pi v8
+hardware-long: Raspberry Pi v8 kernel
+
+[2712_description]
+hardware: Raspberry Pi 2712
+hardware-long: Raspberry Pi 2712 kernel

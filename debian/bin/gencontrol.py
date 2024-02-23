@@ -414,17 +414,18 @@ class Gencontrol(Base):
                 override_arches=(arch,)))
 
         generators = config_entry_image('initramfs-generators')
-        group = PackageRelationGroup()
-        for i in generators:
-            i = config_entry_relations.get(i, i)
-            group.append(i)
-            a = PackageRelationEntry(i)
-            if a.operator is not None:
-                a.operator = -a.operator
-                package_image['Breaks'].append(PackageRelationGroup([a]))
-        for item in group:
-            item.arches = [arch]
-        package_image['Depends'].append(group)
+        if generators:
+            group = PackageRelationGroup()
+            for i in generators:
+                i = config_entry_relations.get(i, i)
+                group.append(i)
+                a = PackageRelationEntry(i)
+                if a.operator is not None:
+                    a.operator = -a.operator
+                    package_image['Breaks'].append(PackageRelationGroup([a]))
+            for item in group:
+                item.arches = [arch]
+            package_image['Depends'].append(group)
 
         bootloaders = config_entry_image('bootloaders', None)
         if bootloaders:

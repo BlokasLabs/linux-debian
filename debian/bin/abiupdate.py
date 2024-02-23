@@ -5,6 +5,7 @@ import optparse
 import os
 import shutil
 import tempfile
+import re
 
 from urllib.request import urlopen
 from urllib.error import HTTPError
@@ -114,7 +115,7 @@ class Main(object):
         except KeyError:
             version_abi = self.version_abi
         filename = ("linux-headers-%s-%s_%s_%s.deb" %
-                    (version_abi, prefix, self.version_source, arch))
+                    (version_abi, prefix, re.sub(r'^.*?:', '', self.version_source), arch))
         f = self.retrieve_package(filename, arch)
         d = self.extract_package(f, "linux-headers-%s_%s" % (prefix, arch))
         f1 = d + ("/usr/src/linux-headers-%s-%s/Module.symvers" %
