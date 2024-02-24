@@ -3,6 +3,7 @@ cross-compile-compat: arm-linux-gnueabihf-
 kernel-arch: arm64
 featuresets:
  rpi
+ rpi-rt
 
 [build]
 image-file: arch/arm64/boot/Image.gz
