@@ -1,4 +1,17 @@
+##
+## file: arch/Kconfig
+##
 CONFIG_ARCH_MMAP_RND_BITS=18
 CONFIG_ARCH_MMAP_RND_COMPAT_BITS=11
+
+##
+## file: arch/arm64/Kconfig
+##
+## choice: Page size
 CONFIG_ARM64_16K_PAGES=y
+## end choice
+
+##
+## file: init/Kconfig
+##
 CONFIG_LOCALVERSION="-v8-16k"
