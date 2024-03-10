@@ -2,3 +2,6 @@
 part-long-rpi-rt: This kernel includes the patches for Raspberry Pi platforms + RT patch.
 part-short-rpi-rt: Raspberry Pi RT
 parts: rpi-rt
+
+[image]
+depends: blokas-initrd-rt (>= 1.0.0-1)
