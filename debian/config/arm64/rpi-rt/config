@@ -1,120 +1,419 @@
-# CONFIG_BRCMSTB_GISB_ARB is not set
+##
+## file: arch/arm64/Kconfig
+##
 # CONFIG_CAVIUM_ERRATUM_22375 is not set
 # CONFIG_CAVIUM_ERRATUM_23154 is not set
 # CONFIG_CAVIUM_ERRATUM_27456 is not set
-# CONFIG_EFI_VARS_PSTORE is not set
-# CONFIG_POWER_RESET_BRCMSTB is not set
-# CONFIG_STRICT_DEVMEM is not set
-CONFIG_ANDROID_BINDERFS=y
-CONFIG_ANDROID_BINDER_IPC=y
-CONFIG_ARCH_BRCMSTB=y
-CONFIG_ARMV8_DEPRECATED=y
-CONFIG_BCM2711_THERMAL=y
-CONFIG_BCM2712_IOMMU=y
-CONFIG_BCM2712_MIP=y
-CONFIG_BCM2835_THERMAL=y
-CONFIG_BCMGENET=y
-CONFIG_BLK_DEV_NVME=y
-CONFIG_BLK_DEV_THROTTLING=y
-CONFIG_BPF_JIT=y
-CONFIG_CHECKPOINT_RESTORE=y
-CONFIG_CIFS_POSIX=y
-CONFIG_COMMON_CLK_RP1=y
-CONFIG_COMMON_CLK_RP1_SDIO=y
 CONFIG_COMPAT=y
+CONFIG_ARMV8_DEPRECATED=y
+CONFIG_SWP_EMULATION=y
 CONFIG_CP15_BARRIER_EMULATION=y
-CONFIG_CPUSETS=y
-CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
-CONFIG_CPU_IDLE=y
-CONFIG_CRYPTO_AES=m
-CONFIG_CRYPTO_AES_ARM64=m
-CONFIG_CRYPTO_AES_ARM64_BS=m
-CONFIG_CRYPTO_AES_ARM64_CE_BLK=m
-CONFIG_CRYPTO_AES_ARM64_CE_CCM=m
-CONFIG_CRYPTO_CBC=m
-CONFIG_CRYPTO_CRYPTD=m
+CONFIG_SETEND_EMULATION=y
+CONFIG_RANDOMIZE_BASE=y
+
+##
+## file: arch/arm64/Kconfig.platforms
+##
+CONFIG_ARCH_BRCMSTB=y
+
+##
+## file: arch/arm64/crypto/Kconfig
+##
 CONFIG_CRYPTO_GHASH_ARM64_CE=m
 CONFIG_CRYPTO_SHA1_ARM64_CE=m
 CONFIG_CRYPTO_SHA2_ARM64_CE=m
-CONFIG_CRYPTO_SHA3_ARM64=m
-CONFIG_CRYPTO_SHA512=m
 CONFIG_CRYPTO_SHA512_ARM64_CE=m
+CONFIG_CRYPTO_SHA3_ARM64=m
 CONFIG_CRYPTO_SM3_ARM64_CE=m
+CONFIG_CRYPTO_AES_ARM64=m
+CONFIG_CRYPTO_AES_ARM64_CE_BLK=m
+CONFIG_CRYPTO_AES_ARM64_BS=m
 CONFIG_CRYPTO_SM4_ARM64_CE=m
-CONFIG_DM_WRITECACHE=m
-CONFIG_DRM_PANEL_ILITEK_ILI9881C=m
-CONFIG_DRM_RP1_DPI=m
-CONFIG_DRM_RP1_DSI=m
-CONFIG_DRM_RP1_VEC=m
-CONFIG_DRM_V3D=m
-CONFIG_DW_AXI_DMAC=y
-CONFIG_FS_ENCRYPTION=y
-CONFIG_GPIO_BCM_VIRT=y
-CONFIG_I2C_BRCMSTB=m
-CONFIG_I2C_DESIGNWARE_PLATFORM=m
+CONFIG_CRYPTO_AES_ARM64_CE_CCM=m
+
+##
+## file: arch/arm64/kvm/Kconfig
+##
+CONFIG_VIRTUALIZATION=y
 CONFIG_KVM=y
-CONFIG_LAN743X=m
-CONFIG_LRU_GEN_ENABLED=y
-CONFIG_MACB=y
-CONFIG_MACVTAP=m
-CONFIG_MFD_RP1=y
-CONFIG_MFD_SYSCON=y
-CONFIG_MICREL_PHY=y
-CONFIG_MMC_SDHCI_IPROC=y
-CONFIG_MMC_SDHCI_OF_DWCMSHC=m
-CONFIG_MPTCP=y
-CONFIG_NETFILTER_XTABLES_COMPAT=y
-CONFIG_NETWORK_PHY_TIMESTAMPING=y
-CONFIG_NET_CLS_BPF=y
-CONFIG_NVMEM_RMEM=m
-CONFIG_NVME_HWMON=y
-CONFIG_PCI=y
-CONFIG_PCIEAER=y
-CONFIG_PCIEASPM_POWERSAVE=y
-CONFIG_PCIEPORTBUS=y
-CONFIG_PCIE_DPC=y
-CONFIG_PINCTRL_BCM2712=y
-CONFIG_PINCTRL_RP1=y
-CONFIG_PM_DEBUG=y
-CONFIG_PREEMPT=y
-CONFIG_PWM_BRCMSTB=y
-CONFIG_PWM_RP1=y
-CONFIG_R8169=m
-CONFIG_RANDOMIZE_BASE=y
-CONFIG_REGULATOR_FIXED_VOLTAGE=y
-CONFIG_REGULATOR_GPIO=y
+
+##
+## file: block/Kconfig
+##
+CONFIG_BLK_DEV_THROTTLING=y
+
+##
+## file: crypto/Kconfig
+##
+CONFIG_CRYPTO_CRYPTD=m
+CONFIG_CRYPTO_AES=m
+CONFIG_CRYPTO_CBC=m
+CONFIG_CRYPTO_SHA512=m
+
+##
+## file: drivers/android/Kconfig
+##
+CONFIG_ANDROID_BINDER_IPC=y
+CONFIG_ANDROID_BINDERFS=y
+
+##
+## file: drivers/ata/Kconfig
+##
 CONFIG_SATA_AHCI=m
 CONFIG_SATA_MV=m
-CONFIG_SENSORS_RP1_ADC=m
-CONFIG_SERIAL_8250_NR_UARTS=5
-CONFIG_SETEND_EMULATION=y
-CONFIG_SND_DACBERRY400=m
-CONFIG_SND_DESIGNWARE_I2S=m
-CONFIG_SND_DESIGNWARE_PCM=y
-CONFIG_SPI_DESIGNWARE=m
-CONFIG_SPI_DW_DMA=y
-CONFIG_SPI_DW_MMIO=m
-CONFIG_SWP_EMULATION=y
-CONFIG_USB_DWC3=y
-CONFIG_USB_LAN78XX=y
-CONFIG_USB_RTL8152=y
-CONFIG_USB_UAS=y
-CONFIG_USB_XHCI_HCD=y
-CONFIG_V4L_TEST_DRIVERS=y
-CONFIG_VHOST_CROSS_ENDIAN_LEGACY=y
-CONFIG_VHOST_NET=m
-CONFIG_VHOST_VSOCK=m
-CONFIG_VIDEO_RASPBERRYPI_PISP_BE=m
-CONFIG_VIDEO_RP1_CFE=m
-CONFIG_VIDEO_RPIVID=m
-CONFIG_VIDEO_VICODEC=m
-CONFIG_VIDEO_VIM2M=m
-CONFIG_VIDEO_VIMC=m
-CONFIG_VIDEO_VIVID=m
-CONFIG_VIRTUALIZATION=y
-CONFIG_VSOCKETS=m
-CONFIG_VSOCKMON=m
-CONFIG_XFRM_USER=m
+
+##
+## file: drivers/bus/Kconfig
+##
+# CONFIG_BRCMSTB_GISB_ARB is not set
+
+##
+## file: drivers/char/xillybus/Kconfig
+##
 CONFIG_XILLYBUS=m
 CONFIG_XILLYBUS_PCIE=m
 CONFIG_XILLYUSB=m
+
+##
+## file: drivers/clk/Kconfig
+##
+CONFIG_COMMON_CLK_RP1=y
+CONFIG_COMMON_CLK_RP1_SDIO=y
+
+##
+## file: drivers/cpufreq/Kconfig
+##
+CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
+
+##
+## file: drivers/cpuidle/Kconfig
+##
+CONFIG_CPU_IDLE=y
+
+##
+## file: drivers/dma/Kconfig
+##
+CONFIG_DW_AXI_DMAC=y
+
+##
+## file: drivers/firmware/efi/Kconfig
+##
+# CONFIG_EFI_VARS_PSTORE is not set
+
+##
+## file: drivers/gpio/Kconfig
+##
+CONFIG_GPIO_BCM_VIRT=y
+
+##
+## file: drivers/gpu/drm/panel/Kconfig
+##
+CONFIG_DRM_PANEL_ILITEK_ILI9881C=m
+
+##
+## file: drivers/gpu/drm/rp1/rp1-dpi/Kconfig
+##
+CONFIG_DRM_RP1_DPI=m
+
+##
+## file: drivers/gpu/drm/rp1/rp1-dsi/Kconfig
+##
+CONFIG_DRM_RP1_DSI=m
+
+##
+## file: drivers/gpu/drm/rp1/rp1-vec/Kconfig
+##
+CONFIG_DRM_RP1_VEC=m
+
+##
+## file: drivers/gpu/drm/v3d/Kconfig
+##
+CONFIG_DRM_V3D=m
+
+##
+## file: drivers/hwmon/Kconfig
+##
+CONFIG_SENSORS_RP1_ADC=m
+
+##
+## file: drivers/i2c/busses/Kconfig
+##
+CONFIG_I2C_BRCMSTB=m
+CONFIG_I2C_DESIGNWARE_PLATFORM=m
+
+##
+## file: drivers/iommu/Kconfig
+##
+CONFIG_BCM2712_IOMMU=y
+
+##
+## file: drivers/irqchip/Kconfig
+##
+CONFIG_BCM2712_MIP=y
+
+##
+## file: drivers/md/Kconfig
+##
+CONFIG_DM_WRITECACHE=m
+
+##
+## file: drivers/media/platform/raspberrypi/pisp_be/Kconfig
+##
+CONFIG_VIDEO_RASPBERRYPI_PISP_BE=m
+
+##
+## file: drivers/media/platform/raspberrypi/rp1_cfe/Kconfig
+##
+CONFIG_VIDEO_RP1_CFE=m
+
+##
+## file: drivers/media/test-drivers/Kconfig
+##
+CONFIG_V4L_TEST_DRIVERS=y
+CONFIG_VIDEO_VIM2M=m
+
+##
+## file: drivers/media/test-drivers/vicodec/Kconfig
+##
+CONFIG_VIDEO_VICODEC=m
+
+##
+## file: drivers/media/test-drivers/vimc/Kconfig
+##
+CONFIG_VIDEO_VIMC=m
+
+##
+## file: drivers/media/test-drivers/vivid/Kconfig
+##
+CONFIG_VIDEO_VIVID=m
+
+##
+## file: drivers/mfd/Kconfig
+##
+CONFIG_MFD_SYSCON=y
+CONFIG_MFD_RP1=y
+
+##
+## file: drivers/mmc/host/Kconfig
+##
+CONFIG_MMC_SDHCI_OF_DWCMSHC=m
+CONFIG_MMC_SDHCI_IPROC=y
+
+##
+## file: drivers/net/Kconfig
+##
+CONFIG_MACVTAP=m
+CONFIG_VSOCKMON=m
+
+##
+## file: drivers/net/ethernet/broadcom/Kconfig
+##
+CONFIG_BCMGENET=y
+
+##
+## file: drivers/net/ethernet/cadence/Kconfig
+##
+CONFIG_MACB=y
+
+##
+## file: drivers/net/ethernet/microchip/Kconfig
+##
+CONFIG_LAN743X=m
+
+##
+## file: drivers/net/ethernet/realtek/Kconfig
+##
+CONFIG_R8169=m
+
+##
+## file: drivers/net/phy/Kconfig
+##
+CONFIG_MICREL_PHY=y
+
+##
+## file: drivers/net/usb/Kconfig
+##
+CONFIG_USB_RTL8152=y
+CONFIG_USB_LAN78XX=y
+
+##
+## file: drivers/nvme/host/Kconfig
+##
+CONFIG_BLK_DEV_NVME=y
+CONFIG_NVME_HWMON=y
+
+##
+## file: drivers/nvmem/Kconfig
+##
+CONFIG_NVMEM_RMEM=m
+
+##
+## file: drivers/pci/Kconfig
+##
+CONFIG_PCI=y
+
+##
+## file: drivers/pci/pcie/Kconfig
+##
+CONFIG_PCIEPORTBUS=y
+CONFIG_PCIEAER=y
+## choice: Default ASPM policy
+CONFIG_PCIEASPM_POWERSAVE=y
+## end choice
+CONFIG_PCIE_DPC=y
+
+##
+## file: drivers/pinctrl/Kconfig
+##
+CONFIG_PINCTRL_RP1=y
+
+##
+## file: drivers/pinctrl/bcm/Kconfig
+##
+CONFIG_PINCTRL_BCM2712=y
+
+##
+## file: drivers/power/reset/Kconfig
+##
+# CONFIG_POWER_RESET_BRCMSTB is not set
+
+##
+## file: drivers/pwm/Kconfig
+##
+CONFIG_PWM_BRCMSTB=y
+CONFIG_PWM_RP1=y
+
+##
+## file: drivers/regulator/Kconfig
+##
+CONFIG_REGULATOR_FIXED_VOLTAGE=y
+CONFIG_REGULATOR_GPIO=y
+
+##
+## file: drivers/spi/Kconfig
+##
+CONFIG_SPI_DESIGNWARE=m
+CONFIG_SPI_DW_DMA=y
+CONFIG_SPI_DW_MMIO=m
+
+##
+## file: drivers/staging/media/rpivid/Kconfig
+##
+CONFIG_VIDEO_RPIVID=m
+
+##
+## file: drivers/thermal/broadcom/Kconfig
+##
+CONFIG_BCM2711_THERMAL=y
+CONFIG_BCM2835_THERMAL=y
+
+##
+## file: drivers/tty/serial/8250/Kconfig
+##
+CONFIG_SERIAL_8250_NR_UARTS=5
+
+##
+## file: drivers/usb/dwc3/Kconfig
+##
+CONFIG_USB_DWC3=y
+
+##
+## file: drivers/usb/host/Kconfig
+##
+CONFIG_USB_XHCI_HCD=y
+
+##
+## file: drivers/usb/storage/Kconfig
+##
+CONFIG_USB_UAS=y
+
+##
+## file: drivers/vhost/Kconfig
+##
+CONFIG_VHOST_NET=m
+CONFIG_VHOST_VSOCK=m
+CONFIG_VHOST_CROSS_ENDIAN_LEGACY=y
+
+##
+## file: fs/crypto/Kconfig
+##
+CONFIG_FS_ENCRYPTION=y
+
+##
+## file: fs/smb/client/Kconfig
+##
+CONFIG_CIFS_POSIX=y
+
+##
+## file: init/Kconfig
+##
+CONFIG_CPUSETS=y
+CONFIG_CHECKPOINT_RESTORE=y
+
+##
+## file: kernel/Kconfig.preempt
+##
+## choice: Preemption Model
+CONFIG_PREEMPT=y
+## end choice
+
+##
+## file: kernel/bpf/Kconfig
+##
+CONFIG_BPF_JIT=y
+
+##
+## file: kernel/power/Kconfig
+##
+CONFIG_PM_DEBUG=y
+
+##
+## file: lib/Kconfig.debug
+##
+# CONFIG_STRICT_DEVMEM is not set
+
+##
+## file: mm/Kconfig
+##
+CONFIG_LRU_GEN_ENABLED=y
+
+##
+## file: net/Kconfig
+##
+CONFIG_NETWORK_PHY_TIMESTAMPING=y
+
+##
+## file: net/mptcp/Kconfig
+##
+CONFIG_MPTCP=y
+
+##
+## file: net/netfilter/Kconfig
+##
+CONFIG_NETFILTER_XTABLES_COMPAT=y
+
+##
+## file: net/sched/Kconfig
+##
+CONFIG_NET_CLS_BPF=y
+
+##
+## file: net/vmw_vsock/Kconfig
+##
+CONFIG_VSOCKETS=m
+
+##
+## file: net/xfrm/Kconfig
+##
+CONFIG_XFRM_USER=m
+
+##
+## file: sound/soc/bcm/Kconfig
+##
+CONFIG_SND_DACBERRY400=m
+
+##
+## file: sound/soc/dwc/Kconfig
+##
+CONFIG_SND_DESIGNWARE_I2S=m
+CONFIG_SND_DESIGNWARE_PCM=y

@@ -1,9 +1,38 @@
-# CONFIG_ATAGS is not set
-# CONFIG_CACHE_L2X0 is not set
-# CONFIG_IOMMU_SUPPORT is not set
-CONFIG_CRYPTO_AES_ARM=m
-CONFIG_POWER_RESET=y
-CONFIG_PREEMPT_VOLUNTARY=y
+##
+## file: arch/arm/Kconfig
+##
 CONFIG_UACCESS_WITH_MEMCPY=y
+# CONFIG_ATAGS is not set
 CONFIG_VFP=y
+
+##
+## file: arch/arm/crypto/Kconfig
+##
+CONFIG_CRYPTO_AES_ARM=m
+
+##
+## file: arch/arm/mm/Kconfig
+##
+# CONFIG_CACHE_L2X0 is not set
+
+##
+## file: drivers/iommu/Kconfig
+##
+# CONFIG_IOMMU_SUPPORT is not set
+
+##
+## file: drivers/power/reset/Kconfig
+##
+CONFIG_POWER_RESET=y
+
+##
+## file: kernel/Kconfig.preempt
+##
+## choice: Preemption Model
+CONFIG_PREEMPT_VOLUNTARY=y
+## end choice
+
+##
+## file: net/xfrm/Kconfig
+##
 CONFIG_XFRM_USER=y

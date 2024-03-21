@@ -1,50 +1,193 @@
-# CONFIG_PCIEASPM is not set
-# CONFIG_RCU_TRACE is not set
-CONFIG_ARM_LPAE=y
-CONFIG_BCM2711_THERMAL=y
-CONFIG_BCMGENET=y
-CONFIG_BLK_DEV_NVME=y
-CONFIG_BLK_DEV_THROTTLING=y
-CONFIG_CIFS_POSIX=y
-CONFIG_CPUSETS=y
-CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
-CONFIG_CRYPTO_AES=m
-CONFIG_CRYPTO_AES_ARM_BS=m
-CONFIG_CRYPTO_SHA1_ARM_NEON=m
-CONFIG_CRYPTO_SHA512=m
-CONFIG_DM_WRITECACHE=m
-CONFIG_DRM_PANEL_ILITEK_ILI9881C=m
-CONFIG_DRM_V3D=m
-CONFIG_FS_ENCRYPTION=y
-CONFIG_GPIO_BCM_VIRT=y
+##
+## file: arch/arm/Kconfig
+##
+CONFIG_SMP=y
 CONFIG_HIGHMEM=y
-CONFIG_I2C_BRCMSTB=m
-CONFIG_KERNEL_MODE_NEON=y
-CONFIG_LAN743X=m
-CONFIG_LOCALVERSION="-v7l"
-CONFIG_MICREL_PHY=y
-CONFIG_MMC_SDHCI_IPROC=y
 CONFIG_NEON=y
-CONFIG_NETWORK_PHY_TIMESTAMPING=y
-CONFIG_NVMEM_RMEM=m
-CONFIG_PCI=y
-CONFIG_PCIEPORTBUS=y
-CONFIG_PCIE_BRCMSTB=y
-CONFIG_PCI_MSI=y
-CONFIG_R8169=m
-CONFIG_REGULATOR_FIXED_VOLTAGE=y
-CONFIG_REGULATOR_GPIO=y
+CONFIG_KERNEL_MODE_NEON=y
+
+##
+## file: arch/arm/crypto/Kconfig
+##
+CONFIG_CRYPTO_SHA1_ARM_NEON=m
+CONFIG_CRYPTO_AES_ARM_BS=m
+
+##
+## file: arch/arm/mm/Kconfig
+##
+CONFIG_ARM_LPAE=y
+
+##
+## file: block/Kconfig
+##
+CONFIG_BLK_DEV_THROTTLING=y
+
+##
+## file: crypto/Kconfig
+##
+CONFIG_CRYPTO_AES=m
+CONFIG_CRYPTO_SHA512=m
+
+##
+## file: drivers/ata/Kconfig
+##
 CONFIG_SATA_AHCI=m
 CONFIG_SATA_MV=m
-CONFIG_SERIAL_8250_NR_UARTS=5
-CONFIG_SMP=y
-CONFIG_SND_DACBERRY400=m
-CONFIG_USB_LAN78XX=y
-CONFIG_USB_RTL8152=y
-CONFIG_USB_UAS=y
-CONFIG_USB_XHCI_HCD=y
-CONFIG_USB_XHCI_PLATFORM=y
-CONFIG_VIDEO_RPIVID=m
+
+##
+## file: drivers/char/xillybus/Kconfig
+##
 CONFIG_XILLYBUS=m
 CONFIG_XILLYBUS_PCIE=m
 CONFIG_XILLYUSB=m
+
+##
+## file: drivers/cpufreq/Kconfig
+##
+CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
+
+##
+## file: drivers/gpio/Kconfig
+##
+CONFIG_GPIO_BCM_VIRT=y
+
+##
+## file: drivers/gpu/drm/panel/Kconfig
+##
+CONFIG_DRM_PANEL_ILITEK_ILI9881C=m
+
+##
+## file: drivers/gpu/drm/v3d/Kconfig
+##
+CONFIG_DRM_V3D=m
+
+##
+## file: drivers/i2c/busses/Kconfig
+##
+CONFIG_I2C_BRCMSTB=m
+
+##
+## file: drivers/md/Kconfig
+##
+CONFIG_DM_WRITECACHE=m
+
+##
+## file: drivers/mmc/host/Kconfig
+##
+CONFIG_MMC_SDHCI_IPROC=y
+
+##
+## file: drivers/net/ethernet/broadcom/Kconfig
+##
+CONFIG_BCMGENET=y
+
+##
+## file: drivers/net/ethernet/microchip/Kconfig
+##
+CONFIG_LAN743X=m
+
+##
+## file: drivers/net/ethernet/realtek/Kconfig
+##
+CONFIG_R8169=m
+
+##
+## file: drivers/net/phy/Kconfig
+##
+CONFIG_MICREL_PHY=y
+
+##
+## file: drivers/net/usb/Kconfig
+##
+CONFIG_USB_RTL8152=y
+CONFIG_USB_LAN78XX=y
+
+##
+## file: drivers/nvme/host/Kconfig
+##
+CONFIG_BLK_DEV_NVME=y
+
+##
+## file: drivers/nvmem/Kconfig
+##
+CONFIG_NVMEM_RMEM=m
+
+##
+## file: drivers/pci/Kconfig
+##
+CONFIG_PCI=y
+CONFIG_PCI_MSI=y
+
+##
+## file: drivers/pci/controller/Kconfig
+##
+CONFIG_PCIE_BRCMSTB=y
+
+##
+## file: drivers/pci/pcie/Kconfig
+##
+CONFIG_PCIEPORTBUS=y
+# CONFIG_PCIEASPM is not set
+
+##
+## file: drivers/regulator/Kconfig
+##
+CONFIG_REGULATOR_FIXED_VOLTAGE=y
+CONFIG_REGULATOR_GPIO=y
+
+##
+## file: drivers/staging/media/rpivid/Kconfig
+##
+CONFIG_VIDEO_RPIVID=m
+
+##
+## file: drivers/thermal/broadcom/Kconfig
+##
+CONFIG_BCM2711_THERMAL=y
+
+##
+## file: drivers/tty/serial/8250/Kconfig
+##
+CONFIG_SERIAL_8250_NR_UARTS=5
+
+##
+## file: drivers/usb/host/Kconfig
+##
+CONFIG_USB_XHCI_HCD=y
+CONFIG_USB_XHCI_PLATFORM=y
+
+##
+## file: drivers/usb/storage/Kconfig
+##
+CONFIG_USB_UAS=y
+
+##
+## file: fs/crypto/Kconfig
+##
+CONFIG_FS_ENCRYPTION=y
+
+##
+## file: fs/smb/client/Kconfig
+##
+CONFIG_CIFS_POSIX=y
+
+##
+## file: init/Kconfig
+##
+CONFIG_LOCALVERSION="-v7l"
+CONFIG_CPUSETS=y
+
+##
+## file: kernel/rcu/Kconfig.debug
+##
+# CONFIG_RCU_TRACE is not set
+
+##
+## file: net/Kconfig
+##
+CONFIG_NETWORK_PHY_TIMESTAMPING=y
+
+##
+## file: sound/soc/bcm/Kconfig
+##
+CONFIG_SND_DACBERRY400=m

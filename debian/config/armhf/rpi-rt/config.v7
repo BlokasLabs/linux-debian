@@ -1,23 +1,88 @@
-# CONFIG_CPU_SW_DOMAIN_PAN is not set
-# CONFIG_I2C_BRCMSTB is not set
-# CONFIG_RCU_TRACE is not set
-CONFIG_BCM2835_THERMAL=y
-CONFIG_CPUSETS=y
-CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
-CONFIG_CRYPTO_AES_ARM_BS=m
-CONFIG_CRYPTO_SHA1_ARM_NEON=m
-CONFIG_CRYPTO_SHA512=m
-CONFIG_FS_ENCRYPTION=y
-CONFIG_GPIO_BCM_VIRT=y
-CONFIG_KERNEL_MODE_NEON=y
-CONFIG_LOCALVERSION="-v7"
-CONFIG_LRU_GEN_ENABLED=y
-CONFIG_NEON=y
-CONFIG_REGULATOR_FIXED_VOLTAGE=m
-CONFIG_SERIAL_8250_NR_UARTS=1
+##
+## file: arch/arm/Kconfig
+##
 CONFIG_SMP=y
-CONFIG_SND_DACBERRY400=m
-CONFIG_USB_LAN78XX=y
-CONFIG_USB_RTL8152=m
-CONFIG_USB_UAS=m
+## choice: Memory split
 CONFIG_VMSPLIT_2G=y
+## end choice
+# CONFIG_CPU_SW_DOMAIN_PAN is not set
+CONFIG_NEON=y
+CONFIG_KERNEL_MODE_NEON=y
+
+##
+## file: arch/arm/crypto/Kconfig
+##
+CONFIG_CRYPTO_SHA1_ARM_NEON=m
+CONFIG_CRYPTO_AES_ARM_BS=m
+
+##
+## file: crypto/Kconfig
+##
+CONFIG_CRYPTO_SHA512=m
+
+##
+## file: drivers/cpufreq/Kconfig
+##
+CONFIG_CPU_FREQ_GOV_SCHEDUTIL=y
+
+##
+## file: drivers/gpio/Kconfig
+##
+CONFIG_GPIO_BCM_VIRT=y
+
+##
+## file: drivers/i2c/busses/Kconfig
+##
+# CONFIG_I2C_BRCMSTB is not set
+
+##
+## file: drivers/net/usb/Kconfig
+##
+CONFIG_USB_RTL8152=m
+CONFIG_USB_LAN78XX=y
+
+##
+## file: drivers/regulator/Kconfig
+##
+CONFIG_REGULATOR_FIXED_VOLTAGE=m
+
+##
+## file: drivers/thermal/broadcom/Kconfig
+##
+CONFIG_BCM2835_THERMAL=y
+
+##
+## file: drivers/tty/serial/8250/Kconfig
+##
+CONFIG_SERIAL_8250_NR_UARTS=1
+
+##
+## file: drivers/usb/storage/Kconfig
+##
+CONFIG_USB_UAS=m
+
+##
+## file: fs/crypto/Kconfig
+##
+CONFIG_FS_ENCRYPTION=y
+
+##
+## file: init/Kconfig
+##
+CONFIG_LOCALVERSION="-v7"
+CONFIG_CPUSETS=y
+
+##
+## file: kernel/rcu/Kconfig.debug
+##
+# CONFIG_RCU_TRACE is not set
+
+##
+## file: mm/Kconfig
+##
+CONFIG_LRU_GEN_ENABLED=y
+
+##
+## file: sound/soc/bcm/Kconfig
+##
+CONFIG_SND_DACBERRY400=m
