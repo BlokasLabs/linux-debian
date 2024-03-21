@@ -351,13 +351,6 @@ CONFIG_CPUSETS=y
 CONFIG_CHECKPOINT_RESTORE=y
 
 ##
-## file: kernel/Kconfig.preempt
-##
-## choice: Preemption Model
-CONFIG_PREEMPT=y
-## end choice
-
-##
 ## file: kernel/bpf/Kconfig
 ##
 CONFIG_BPF_JIT=y

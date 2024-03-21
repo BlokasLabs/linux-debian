@@ -26,13 +26,6 @@ CONFIG_CRYPTO_AES_ARM=m
 CONFIG_POWER_RESET=y
 
 ##
-## file: kernel/Kconfig.preempt
-##
-## choice: Preemption Model
-CONFIG_PREEMPT_VOLUNTARY=y
-## end choice
-
-##
 ## file: net/xfrm/Kconfig
 ##
 CONFIG_XFRM_USER=y
