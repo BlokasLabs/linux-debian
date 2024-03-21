@@ -5,6 +5,7 @@ arches:
 compiler: gcc-12
 featuresets:
  rpi
+ rpi-rt
 
 [build]
 # Disable code signing by default; this can be overridden per-architecture

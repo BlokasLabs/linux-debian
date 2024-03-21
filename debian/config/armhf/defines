@@ -1,6 +1,7 @@
 [base]
 featuresets:
  rpi
+ rpi-rt
 kernel-arch: arm
 
 [build]
